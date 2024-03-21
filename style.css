@@ -1,0 +1,408 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+:root {
+  /* text colors */
+  --left-chat: hsl(276, 55%, 52%);
+  --right-chat: hsl(271, 15%, 43%);
+  --placeholder: hsl(206, 6%, 79%);
+  --h1: hsl(271, 36%, 24%);
+  --main-paragraph: hsl(270, 7%, 64%);
+  --chat-profile: hsl(276, 100%, 81%);
+  /* backgrounds */
+  --white: hsl(0, 0%, 100%);
+  --chat-background: hsl(270, 20%, 96%);
+  --btn-background: hsl(271, 36%, 24%);
+  --radio-outline: hsl(289, 100%, 72%);
+  /* linear gradients */
+  --to-left: linear-gradient(to left, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
+  --to-right: linear-gradient(
+    to right,
+    hsl(264, 100%, 61%),
+    hsl(293, 100%, 63%)
+  );
+  --to-45: linear-gradient(45deg, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
+}
+body {
+  font-size: 1rem;
+  font-family: "Rubik", sans-serif;
+  overflow: hidden;
+}
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.wrapper::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 60%;
+  background: var(--to-45);
+  z-index: -1;
+  border-bottom-right-radius: 1000px;
+}
+.wrapper::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  height: 60%;
+  background: var(--chat-background);
+  opacity: 0.7;
+  z-index: -1;
+  border-radius: 1000px 0 0 0;
+}
+section {
+  width: 100%;
+}
+.c-card-container {
+  width: min(100%, 23.4375rem);
+  margin-inline: auto;
+  padding: 0 1rem;
+}
+main {
+  display: grid;
+  place-items: center;
+  margin: auto;
+}
+main .c-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  margin-top: 2rem;
+}
+.phone-container {
+  max-width: 330px;
+  background-color: var(--white);
+  padding: 1rem;
+  font-size: 0.6rem;
+  border-radius: 16px;
+  box-shadow: 5px 5px 100px hsl(264, 100%, 85%);
+}
+.chat-header {
+  background-image: var(--to-right);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--white);
+  padding: 2rem 1rem 1rem;
+  border-radius: 16px 16px 8px 8px;
+  position: relative;
+}
+.chat-header::before {
+  content: "";
+  position: absolute;
+  background-color: white;
+  height: 2.5rem;
+  width: 50%;
+  top: -1rem;
+  left: 25%;
+  right: 25%;
+  border-radius: 100px;
+}
+.left-arrow-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.menu-icon {
+  width: 2rem;
+}
+.avatar {
+  width: 2rem;
+  border-radius: 100%;
+  border: 1px solid var(--white);
+}
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.name {
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.availability {
+  font-weight: 400;
+  font-size: 0.6rem;
+  color: var(--chat-profile);
+}
+.chat-window {
+  background-color: var(--chat-background);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.6rem;
+  border-radius: 0 0 12px 12px;
+}
+.left-chat {
+  color: var(--left-chat);
+  font-weight: 400;
+  background-color: hsl(271, 15%, 80%);
+  align-self: flex-start;
+  width: 60%;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+.right-chat {
+  color: var(--right-chat);
+  font-weight: 400;
+  background-color: var(--white);
+  align-self: flex-end;
+  width: 60%;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+.dogs {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+.dog-image {
+  border-radius: 8px;
+  width: 3rem;
+}
+.radio-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: flex-start;
+  color: white;
+}
+.input-container {
+  background-image: var(--to-left);
+  align-self: flex-start;
+  padding: 0.5rem;
+  border-radius: 8px;
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.input-container div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.input-container p {
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+input[type="radio"] {
+  border: 2px solid yellow;
+  background-color: red;
+  /* width: 2rem; */
+}
+.textbox {
+  background-color: white;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 50px;
+}
+.textbox .text-form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+input[type="text"] {
+  width: 100%;
+  border: none;
+  padding-left: 1rem;
+}
+input[type="text"]::placeholder {
+  color: var(--placeholder);
+}
+.btn {
+  background-color: var(--btn-background);
+  border-radius: 100px;
+  display: grid;
+  place-items: center;
+  border: none;
+}
+.text-section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+h1 {
+  color: var(--h1);
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+h1 ~ p {
+  color: var(--main-paragraph);
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.attribution {
+  width: 100%;
+  height: 2rem;
+  margin-top: auto;
+  text-align: center;
+  background-image: var(--to-right);
+  display: grid;
+  place-items: center;
+  p {
+    color: white;
+    font-size: 0.8rem;
+    a {
+      color: var(--btn-background);
+    }
+  }
+}
+@media (min-width: 48rem) {
+  .c-card-container {
+    width: min(100%, 47.5rem);
+  }
+  main .c-card-container {
+    flex-direction: row;
+  }
+  .text-section {
+    text-align: left;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+}
+@media (min-width: 64rem) {
+  .c-card-container {
+    width: min(100%, 62.5rem);
+  }
+  .wrapper::before {
+    content: "";
+    position: absolute;
+    left: -100px;
+    top: 0;
+    width: 33.3%;
+    height: 80%;
+    background: var(--to-45);
+    z-index: -1;
+    border-radius: 0 0 1000px 1000px;
+  }
+  .wrapper::after {
+    content: "";
+    position: absolute;
+    right: -100px;
+    bottom: 0;
+    width: 30%;
+    height: 80%;
+    background: var(--chat-background);
+    opacity: 0.7;
+    z-index: -1;
+    border-radius: 1000px 1000px 0 0;
+  }
+}

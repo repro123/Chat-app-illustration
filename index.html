@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | [Challenge Name Here]</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <main>
+        <div class="c-card-container">
+          <!-- pHONE chat screenshot section -->
+          <section class="phone-container" aria-hidden="true">
+            <div class="chat-header">
+              <div class="profile">
+                <svg
+                  height="512px"
+                  id="Layer_1"
+                  style="enable-background: new 0 0 512 512"
+                  version="1.1"
+                  viewBox="0 0 512 512"
+                  width="512px"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  fill="#fff"
+                  class="left-arrow-icon"
+                >
+                  <polygon
+                    points="352,115.4 331.3,96 160,256 331.3,416 352,396.7 201.5,256 "
+                  />
+                </svg>
+                <img
+                  src="./images/avatar.jpg"
+                  alt="Samuel Green"
+                  class="avatar"
+                />
+                <div class="profile__name">
+                  <p class="name">Samuel Green</p>
+                  <p class="availability">Available to Walk</p>
+                </div>
+              </div>
+              <img
+                src="./images/ellipsis-vertical.svg"
+                alt=""
+                class="menu-icon"
+              />
+            </div>
+
+            <div class="chat-window">
+              <div class="left-chat">
+                <p>That sounds great. I’d be happy with that.</p>
+              </div>
+              <div class="left-chat">
+                <p>Could you send over some pictures of your dog, please?</p>
+              </div>
+              <div class="dogs">
+                <img
+                  src="./images/dog-image-1.jpg"
+                  alt="do playing in a shrub"
+                  class="dog-image"
+                /><img
+                  src="./images/dog-image-2.jpg"
+                  alt="dog lying on sand"
+                  class="dog-image"
+                /><img
+                  src="./images/dog-image-3.jpg"
+                  alt="dog with a stick in its mouth"
+                  class="dog-image"
+                />
+              </div>
+              <div class="right-chat">
+                <p>Here are a few pictures. She’s a happy girl!</p>
+              </div>
+              <div class="right-chat">
+                <p>Can you make it?</p>
+              </div>
+              <div class="left-chat">
+                <p>
+                  She looks so happy! The time we discussed works. How long
+                  shall I take her out for?
+                </p>
+              </div>
+              <form action="#" class="radio-form">
+                <div class="input-container">
+                  <div>
+                    <input
+                      type="radio"
+                      name="duration"
+                      id="half-hour"
+                      value="half-hour"
+                    />
+                    <label for="half-hour">30 minutes walk</label>
+                  </div>
+                  <p>$29</p>
+                </div>
+                <div class="input-container">
+                  <div>
+                    <input
+                      type="radio"
+                      name="duration"
+                      id="one-hour"
+                      value="one-hour"
+                    />
+                    <label for="one-hour">1 hour walk</label>
+                  </div>
+                  <p>$49</p>
+                </div>
+              </form>
+              <div class="textbox">
+                <form action="#" class="text-form">
+                  <input type="text" placeholder="Type a message…" />
+                  <button class="btn">
+                    <svg
+                      enable-background="new 0 0 32 32"
+                      height="32px"
+                      id="Слой_1"
+                      version="1.1"
+                      viewBox="0 0 32 32"
+                      width="32px"
+                      xml:space="preserve"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      class="submit-icon"
+                    >
+                      <g id="Chevron_Right_Circle">
+                        <path
+                          d="M16,0C7.163,0,0,7.163,0,16c0,8.836,7.163,16,16,16c8.836,0,16-7.164,16-16C32,7.163,24.836,0,16,0z M16,30   C8.28,30,2,23.72,2,16C2,8.28,8.28,1.969,16,1.969c7.72,0,14,6.311,14,14.031C30,23.72,23.72,30,16,30z"
+                          fill="#121313"
+                        />
+                        <path
+                          d="M13.808,8.271c-0.391-0.394-1.024-0.394-1.414,0c-0.391,0.395-0.391,1.034,0,1.429l6.195,6.285   l-6.196,6.285c-0.391,0.394-0.391,1.034,0,1.429c0.391,0.394,1.024,0.394,1.414,0l6.9-6.999c0.38-0.385,0.381-1.044,0-1.429   L13.808,8.271z"
+                          fill="#fff"
+                        />
+                      </g>
+                      <g />
+                      <g />
+                      <g />
+                      <g />
+                      <g />
+                      <g />
+                    </svg>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </section>
+          <!-- end of phone chat screenshot -->
+          <!-- text part -->
+          <section class="text-section">
+            <h1>Simple booking</h1>
+            <p>
+              Stay in touch with our dog walkers through the chat interface.
+              This makes it easy to discuss arrangements and make bookings. Once
+              the walk has been completed you can rate your walker and book
+              again all through the chat.
+            </p>
+          </section>
+        </div>
+      </main>
+
+      <footer class="attribution">
+        <div class="c-card-container">
+          <p>
+            Challenge by
+            <a
+              href="https://www.frontendmentor.io?ref=challenge"
+              target="_blank"
+              >Frontend Mentor</a
+            >. Coded by <a href="#">Ibrahim Bello</a>.
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
