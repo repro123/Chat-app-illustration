@@ -321,6 +321,9 @@ input[type="text"] {
   border: none;
   padding-left: 1rem;
 }
+input[type="text"]:focus {
+  outline: none;
+}
 input[type="text"]::placeholder {
   color: var(--placeholder);
 }
